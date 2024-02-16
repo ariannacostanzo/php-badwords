@@ -2,7 +2,8 @@
 
 $paragraph = $_GET['paragraph'];
 $word = $_GET['word'];
-$paragraph_length = strlen($paragraph)
+$paragraph_length = strlen($paragraph);
+$censured_paragraph = str_replace($word, '***', $paragraph);
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ $paragraph_length = strlen($paragraph)
         La tua frase è: <strong> <?php echo $paragraph ?> </strong>ed è lunga: <strong> <?php echo $paragraph_length ?> </strong> caratteri.
     </p>
     <p>
-        La tua frase censurata è: <strong>  </strong>
+        La tua frase censurata è: <strong> <?php echo $censured_paragraph ?> </strong> ed è lunga: <strong> <?php echo strlen($censured_paragraph) ?> </strong> caratteri.
     </p>
 </body>
 </html>
